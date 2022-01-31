@@ -71,7 +71,7 @@ class NLI_infer_BERT(nn.Module):
                  max_seq_length=128,
                  batch_size=32):
         super(NLI_infer_BERT, self).__init__()
-        self.model = BertForSequenceClassification.from_pretrained(pretrained_dir, num_labels=nclasses).cuda()
+        self.model = BertForSequenceClassification.from_pretrained(pretrained_dir, num_labels=nclasses)
 
         # construct dataset loader
         self.dataset = NLIDataset_BERT(pretrained_dir, max_seq_length=max_seq_length, batch_size=batch_size)
